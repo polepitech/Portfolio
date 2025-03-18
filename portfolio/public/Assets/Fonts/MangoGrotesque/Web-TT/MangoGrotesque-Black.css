@@ -1,0 +1,12 @@
+/* Webfont: MangoGrotesque-Black */@font-face {
+    font-family: 'MangoGrotesqueBlack';
+    src: url('MangoGrotesque-Black.eot'); /* IE9 Compat Modes */
+    src: url('MangoGrotesque-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('MangoGrotesque-Black.woff') format('woff'), /* Modern Browsers */
+         url('MangoGrotesque-Black.woff2') format('woff2'), /* Modern Browsers */
+         url('MangoGrotesque-Black.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
