@@ -1,11 +1,6 @@
 'use client';
 import React, { useEffect } from 'react'
-import { gsap } from "/node_modules/gsap";    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
-gsap.registerPlugin(ScrollTrigger);
-
+import { gsap } from "@/lib/gsap";
 export const ProjetsWeb = () => {
 
     useEffect(() => {

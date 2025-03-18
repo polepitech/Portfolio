@@ -1,10 +1,8 @@
 "use client"; 
 import React, { useEffect } from 'react'
 import Matter from "matter-js";
-import { gsap } from "gsap";
-    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { gsap ,ScrollTrigger} from "@/lib/gsap";
+
 
 export const LogoBox = () => {
     useEffect(() => {
