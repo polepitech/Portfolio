@@ -9,7 +9,6 @@ export const LogoBox = () => {
         if (typeof window === "undefined") return; // Sécurité : Vérifie qu'on est bien côté client
     
         let cible = document.querySelector(".LogoBox"); // Correction du sélecteur CSS
-        console.log(cible);
         if (!cible) return; // Vérifie que l'élément existe
     
         // module aliases
@@ -124,10 +123,10 @@ export const LogoBox = () => {
         });
         rescale(1.5);
 
-        let speed = (window.innerWidth/700)*(window.innerWidth/50000);
+        let speed = (window.innerWidth/700)*(window.innerWidth/100000);
 
         window.addEventListener("resize", (e) =>{
-            speed = (window.innerWidth/700)*(window.innerWidth/50000);
+            speed = (window.innerWidth/700)*(window.innerWidth/100000);
         });
 
 

@@ -1,9 +1,30 @@
+'use client'
 import Aurora from "@/Componants/Aurora";
 import { LogoBox } from "@/Componants/LogoBox";
+import { ProjetMusique } from "@/Componants/ProjetMusique";
 import { ProjetsWeb } from "@/Componants/ProjetsWeb";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+
+
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+  const title = " Paul DAVID | Portofolio ";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if(count > 16){
+        setCount(0);
+      }else{
+        setCount((prev) => prev + 1);
+      }
+      let newtitle = title.substring(count)+title.substring(-count);
+      document.title = newtitle;
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [count]);
+  
   return (
     <>
       <h1 className="w-fit m-auto text-white p-8 text-8xl text-center">PORTFOLIO</h1>
@@ -18,10 +39,11 @@ export default function Home() {
       <h2 className="w-fit m-10 text-white p-8 text-8xl text-left font-bold">PROJETS :</h2>
       <ProjetsWeb/>
 
-      <div className="projet flex relative w-screen h-screen cursor-pointer">
-      </div>
+      <h2 className="w-fit m-10 mt-60 text-white p-8 text-8xl text-left font-bold">Musique :</h2>
+      <ProjetMusique/>
 
       <div className="grain fixed opacity-5 mix-blend-hard-light top-0 left-0 w-screen h-full z-10"></div> 
+
       <Aurora 
         colorStops={["#06314a", "#000317", "#000a42"]}
         blend={1}

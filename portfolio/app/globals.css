@@ -19,7 +19,7 @@ body{
   /* background-blend-mode: color; */
   pointer-events: none;
 }
-*{
+h1,p,h2{
   font-family: 'Oswald';
   font-family: 'MangoGrotesque';
 
@@ -48,8 +48,17 @@ body{
   background-image: linear-gradient(180deg, #000000 0%, #030a1a00 20%,#030a1a00 80%, #000000 100%);
 }
 
+/* //PARALAX */
 
-
+.albumParralax, .albumParralax img{
+  transition: transform 1.5s cubic-bezier(.04,.9,.54,.92);
+}
+.jefe{
+  font-family: 'serif'
+}
+.entry{
+  transform: scale(2);
+}
 
 
 
