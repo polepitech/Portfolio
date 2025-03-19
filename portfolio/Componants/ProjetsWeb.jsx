@@ -27,6 +27,15 @@ export const ProjetsWeb = () => {
             x:0,
             ease: "elastic.out(1,0.3)",
         });
+        let iphone = document.querySelector('.iphone');
+        iphone.addEventListener('mouseenter',(e)=>{
+            console.log(iphone)
+            gsap.to(".iphone", {
+                scale: 1.3,
+                duration: 0.2,
+                ease: "sine.inOut",
+                });
+        })
     
     }, []); // Exécuter ce code seulement après le rendu du composant
 

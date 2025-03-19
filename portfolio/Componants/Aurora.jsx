@@ -135,6 +135,9 @@ export default function Aurora(props) {
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
+    // gl.canvas.style.filter = 'contrast(2000%) brightness(70%)';
+    // gl.canvas.style.background = "red, url('/Assets/Images/Grain.svg')";
+    ;
 
     let program;
 
@@ -203,5 +206,5 @@ export default function Aurora(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude]);
 
-  return <div ref={ctnDom} className="absolute opacity-30 top-0 left-0 -z-1 w-screen h-screen"/>;
+  return <div ref={ctnDom} className="aurora absolute opacity-70 top-0 left-0 -z-1 w-screen h-screen"/>;
 }
