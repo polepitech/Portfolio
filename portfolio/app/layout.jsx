@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { SmoothScroll } from "@/Componants/SmoothScroll";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SmoothScroll>
           {children}
+          <Analytics />
         </SmoothScroll>
       </body>
     </html>
