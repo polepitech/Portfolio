@@ -49,12 +49,23 @@ export const LogoBox = () => {
 
 
 
-
+        var circleGround = Bodies.circle(400, 810, 400, { isStatic: true });
         var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
-        var topBorder = Bodies.rectangle(400, 10, 810, 20, { isStatic: true });
-        var LeftBorder = Bodies.rectangle(10, 410, 20, 1000, { isStatic: true });
-        var RightBorder = Bodies.rectangle(790, 410, 20, 1000, { isStatic: true });
+        var topBorder = Bodies.rectangle(400, 110, 810, 20, { isStatic: true });
+        var LeftBorder = Bodies.rectangle(50, 410, 20, 1000, { isStatic: true });
+        var RightBorder = Bodies.rectangle(750, 410, 20, 1000, { isStatic: true });
 
+        circleGround.render.fillStyle = 'transparent';
+        ground.render.fillStyle = 'transparent';
+        topBorder.render.fillStyle = 'transparent';
+        LeftBorder.render.fillStyle = 'transparent';
+        RightBorder.render.fillStyle = 'transparent';
+
+        circleGround.render.strokeStyle = 'transparent';
+        ground.render.strokeStyle = 'transparent';
+        topBorder.render.strokeStyle = 'transparent';
+        LeftBorder.render.strokeStyle = 'transparent';
+        RightBorder.render.strokeStyle = 'transparent';
 
 
         phpBox.render.sprite.texture = "Assets/logo/php.svg";
@@ -78,10 +89,12 @@ export const LogoBox = () => {
         let allBox = [photoshopBox,protoolsBox,phpBox,sqlBox, tailwindBox,jsBox,nextBox,reactBox,htmlBox,cBox,cssBox,terminalBox];
 
 
+        Matter.Body.rotate(LeftBorder,0.4);
+        Matter.Body.rotate(RightBorder,-0.4);
 
 
         // add all of the bodies to the world
-        Composite.add(engine.world, [photoshopBox,protoolsBox,terminalBox,phpBox,sqlBox, jsBox,tailwindBox,nextBox,reactBox,htmlBox,cBox,cssBox, ground,LeftBorder,RightBorder,topBorder]);
+        Composite.add(engine.world, [circleGround,photoshopBox,protoolsBox,terminalBox,phpBox,sqlBox, jsBox,tailwindBox,nextBox,reactBox,htmlBox,cBox,cssBox, ground,LeftBorder,RightBorder,topBorder]);
 
         // run the renderer
         Render.run(render);
@@ -90,6 +103,8 @@ export const LogoBox = () => {
         var runner = Runner.create();
         Runner.run(runner, engine);
     
+      
+
         // add mouse control
         var mouse = Mouse.create(render.canvas);
         var mouseConstraint = MouseConstraint.create(engine, {
@@ -123,10 +138,10 @@ export const LogoBox = () => {
         });
         rescale(1.5);
 
-        let speed = (window.innerWidth/700)*(window.innerWidth/100000);
+        let speed = (window.innerWidth/700)*(window.innerWidth/100000)+0.01;
 
         window.addEventListener("resize", (e) =>{
-            speed = (window.innerWidth/700)*(window.innerWidth/100000);
+            speed = (window.innerWidth/700)*(window.innerWidth/100000)+0.01;
         });
 
 
@@ -138,9 +153,14 @@ export const LogoBox = () => {
             }
         });
         let canvas = document.querySelector('canvas');
-        canvas.style.width = '50vw';
+        canvas.style.width = '45vh';
 
       }, []); // Exécuter ce code seulement après le rendu du composant
     
-      return <div className="cursor-pointer LogoBox w-fit h-fit m-auto bg-amber-300"></div>;
+      return (
+     
+          <div className="cursor-pointer LogoBox w-fit h-fit left-[calc(48%-20px)] translate-x-[-50%] -top-10 absolute"></div>
+ 
+
+      )
 };

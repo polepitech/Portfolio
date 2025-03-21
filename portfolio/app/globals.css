@@ -53,7 +53,7 @@ h1,p,h2{
 .albumParralax, .albumParralax img{
   transition: transform 1.5s cubic-bezier(.04,.9,.54,.92);
 }
-.jefe{
+.jefetxt{
   font-family: 'serif'
 }
 .entry{

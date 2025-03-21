@@ -31,6 +31,20 @@ export const ProjetsWeb = () => {
             x:0,
             ease: "elastic.out(1,0.3)",
         });
+
+
+
+        gsap.from(".video,.fond", {duration: 1,
+            scrollTrigger: {
+            trigger:".video",
+            start: "30% 70%",
+            end: "70% 30%",
+            // markers:true,
+            toggleActions: "restart reverse play reverse",
+            },
+            opacity:0,
+        });
+
         let iphone = document.querySelector('.iphone');
         iphone.addEventListener('mouseenter',(e)=>{
             console.log(iphone)
@@ -48,7 +62,7 @@ export const ProjetsWeb = () => {
 
   return (
     <div className="projet flex relative w-screen h-screen cursor-pointer overflow-hidden">
-        <video className="-z-2 w-full object-cover blur-[0px] opacity-60 bg-blend-hard-light" autoPlay loop muted playsInline>
+        <video className="video -z-2 w-full object-cover blur-[0px] opacity-60 bg-blend-hard-light" autoPlay loop muted playsInline>
             <source src="/Assets/Videos/test2.mp4" type="video/mp4"/>
             Votre navigateur ne supporte pas la balise vidéo.
         </video>

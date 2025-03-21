@@ -42,6 +42,21 @@ export const ProjetMusique = () => {
       },
     });
 
+    gsap.from(".letter", {
+      scrollTrigger: {
+        trigger: ".jefetxt",
+        start: "top bottom",
+        end: "bottom 50%",
+        toggleActions:"play reverse replay reverse",
+      },
+      y: 200,
+      duration: 1,
+      ease: "power1.inOut",
+      stagger: {
+        each: 0.2,
+      },
+    });
+
     window.addEventListener("mousemove", MoveElement);
 
     return () => {
@@ -58,12 +73,12 @@ export const ProjetMusique = () => {
         <img className='entry para w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/vitre.png' data-speed="0.2"  data-scale="1.2"/>
         <img className='entry para w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/Ni.png' data-speed="0.1"  data-scale="1.2"/>
       </div>
-      <p className='jefe text-yellow-400 text-4xl absolute z-1 bottom-[5vw] w-[50vw] left-[25vw] flex justify-between'>
-        <span>J</span>
-        <span>E</span>
-        <span>F</span>
-        <span>E</span>
-      </p>
+      <div className='jefetxt text-yellow-400 text-4xl absolute z-1 bottom-[10vh] w-[50vw] left-[25vw] flex justify-between'>
+        <div className='overflow-hidden'><div className='letter'>J</div></div>
+        <div className='overflow-hidden'><div className='letter'>E</div></div>
+        <div className='overflow-hidden'><div className='letter'>F</div></div>
+        <div className='overflow-hidden'><div className='letter'>E</div></div>
+      </div>
     </div>
   );
 };
