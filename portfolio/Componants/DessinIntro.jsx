@@ -14,7 +14,7 @@ export const DessinIntro = () => {
               yoyo:true,
               ease: "sine.inOut",
               stagger:{
-                each:0.2
+                each:0.4
               }
           });
 
@@ -23,7 +23,7 @@ export const DessinIntro = () => {
                 trigger:".DessinEtBox",
                 start: "1% 20%",
                 scrub:true,
-                markers:true, 
+                // markers:true, 
                 pin:true  
                 },
                 rotateZ:180,

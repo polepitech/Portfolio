@@ -138,10 +138,10 @@ export const LogoBox = () => {
         });
         rescale(1.5);
 
-        let speed = (window.innerWidth/700)*(window.innerWidth/100000)+0.01;
+        let speed = (window.innerWidth/700)*(window.innerWidth/300000)+0.01;
 
         window.addEventListener("resize", (e) =>{
-            speed = (window.innerWidth/700)*(window.innerWidth/100000)+0.01;
+            speed = (window.innerWidth/700)*(window.innerWidth/300000)+0.01;
         });
 
 

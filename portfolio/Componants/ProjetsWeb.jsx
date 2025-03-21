@@ -36,13 +36,13 @@ export const ProjetsWeb = () => {
 
         gsap.from(".video,.fond", {duration: 1,
             scrollTrigger: {
-            trigger:".video",
+            trigger:".projet",
             start: "30% 70%",
             end: "70% 30%",
             // markers:true,
             toggleActions: "restart reverse play reverse",
             },
-            opacity:0,
+            y:"-100vh",
         });
 
         let iphone = document.querySelector('.iphone');
