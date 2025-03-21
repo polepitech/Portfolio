@@ -9,7 +9,7 @@
 body{
   background: rgb(0,0,0);
   background-image: linear-gradient(120deg, #030a1a 0%, #000000 100%);
-  overflow: auto;
+  /* overflow-x:hidden; */
 }
 .grain{
   background-image: url("/Assets/Images/Grain.jpg");
