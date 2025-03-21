@@ -1,5 +1,6 @@
 'use client'
 import Aurora from "@/Componants/Aurora";
+import { InfoBar } from "@/Componants/InfoBar";
 import { LogoBox } from "@/Componants/LogoBox";
 import { ProjetMusique } from "@/Componants/ProjetMusique";
 import { ProjetsWeb } from "@/Componants/ProjetsWeb";
@@ -28,7 +29,7 @@ export default function Home() {
   return (
     <>
   
-
+      <InfoBar/>
       <h1 className="w-fit m-auto text-white p-8 text-8xl text-center">PORTFOLIO</h1>
    
       <LogoBox/>
@@ -38,10 +39,10 @@ export default function Home() {
       </div>
         
 
-      <h2 className="w-fit m-10 text-white p-8 text-8xl text-left font-bold">PROJETS :</h2>
+      {/* <h2 className="w-fit m-10 text-white p-8 text-8xl text-left font-bold">PROJETS :</h2> */}
       <ProjetsWeb/>
 
-      <h2 className="w-fit m-10 mt-60 text-white p-8 text-8xl text-left font-bold">Musique :</h2>
+      {/* <h2 className="w-fit m-10 mt-60 text-white p-8 text-8xl text-left font-bold">Musique :</h2> */}
       <ProjetMusique/>
 
       <div className="grain fixed opacity-5 mix-blend-hard-light top-0 left-0 w-screen h-full z-10"></div> 

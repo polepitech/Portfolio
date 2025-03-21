@@ -1,64 +1,69 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from "@/lib/gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 export const ProjetMusique = () => {
-  const [posX, setPosX] = useState(0.0);
-  const [posY, setPosY] = useState(0.0);
-
-
   useEffect(() => {
+    document.querySelectorAll(".entry").forEach((el) => {
+      const myscale = el.dataset.scale || 1;
+      gsap.set(el, { scale: myscale, x: 0, y: 0 });
+    })
+
     const MoveElement = (e) => {
-      const currX = (e.clientX / window.innerWidth - 0.5) * 2; // entre -1 et 1;
-      const currY = (e.clientY / window.innerHeight - 0.5) * 2; // entre -1 et 1;
+      const currX = (e.clientX / window.innerWidth - 0.5) * 2;
+      const currY = (e.clientY / window.innerHeight - 0.5) * 2;
 
-      setPosX(currX*100);
-      setPosY(currY*50);
-
+      document.querySelectorAll(".para").forEach((el) => {
+        const speed = el.dataset.speed || 1;
+        gsap.to(el, {
+          x: currX * 100 * speed,
+          y: currY * 50 * speed,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
     };
 
     gsap.from(".entry", {
-            scrollTrigger: {
-              trigger:".albumParralax",
-              start: "top bottom",
-              },
-            scale: 3,
-            duration: 2,
-            ease: "sine.inOut",
-            stagger:{
-                each:0.3,
-            }
-            });
+      scrollTrigger: {
+        trigger: ".albumParralax",
+        start: "top bottom",
+        end: "bottom 50%",
+        toggleActions:"play reverse replay reverse"
+      },
+      scale: 3,
+      duration: 2,
+      ease: "sine.inOut",
+      stagger: {
+        each: 0.3,
+      },
+    });
 
-
-    window.addEventListener('mousemove', MoveElement);
+    window.addEventListener("mousemove", MoveElement);
 
     return () => {
-      window.removeEventListener('mousemove', MoveElement);
+      window.removeEventListener("mousemove", MoveElement);
     };
   }, []);
 
-  
-
   return (
     <div className="projet flex relative w-screen h-screen cursor-pointer">
-        <div className="albumParralax relative w-[40vw] h-[40vw] bg-red-500 m-auto overflow-hidden" style={{ transform: `translateX(${posX/7}px) translateY(${posY/7}px)`}}>
-
-        <img className='entry w-[80vw] absolute top-[-10px]' src='/Assets/Images/Ninho/ciel.jpg' style={{ transform: `translateX(${posX}px) translateY(${posY}px) scale(2)` }}></img>
-        <img className='entry w-[80vw] absolute top-[-10px] opacity-40' src='/Assets/Images/Ninho/cloud2.png' style={{ transform: `translateX(${posX/3}px) translateY(${posY/3}px) scale(2)`}}></img>
-      1
-        <img className='entry w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/logoC.png'style={{ transform: `translateX(${posX/1.4}px) translateY(${posY/1.4}px)`}}></img>
-        <img className='entry w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/vitre.png' style={{transform:`scale(1.2) translateX(${posX/10}px) translateY(${posY/10}px)`}}></img>
-        <img className='entry w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/Ni.png'style={{transform:`translateY(20px) scale(1.2)`}}></img>
-        </div>
-        <p className='jefe text-yellow-400 text-4xl absolute z-1 bottom-[5vw] w-[50vw] left-[25vw] flex justify-between'>
-            <span>J</span>
-            <span>E</span>
-            <span>F</span>
-            <span>E</span>
-        </p>
+      <div className="para albumParralax relative w-[40vw] h-[40vw] bg-red-500 m-auto overflow-hidden" data-speed="0.1">
+        <img className='entry para w-[80vw] absolute top-[-10px]' src='/Assets/Images/Ninho/ciel.jpg' data-speed="1.4" data-scale="2"/>
+        <img className='entry para w-[80vw] absolute top-[-10px] opacity-40' src='/Assets/Images/Ninho/cloud2.png' data-speed="1.5"  data-scale="2"/>
+        <img className='entry para w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/logoC.png' data-speed="0.8" />
+        <img className='entry para w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/vitre.png' data-speed="0.2"  data-scale="1.2"/>
+        <img className='entry para w-[40vw] absolute top-[-10px]' src='/Assets/Images/Ninho/Ni.png' data-speed="0.1"  data-scale="1.2"/>
+      </div>
+      <p className='jefe text-yellow-400 text-4xl absolute z-1 bottom-[5vw] w-[50vw] left-[25vw] flex justify-between'>
+        <span>J</span>
+        <span>E</span>
+        <span>F</span>
+        <span>E</span>
+      </p>
     </div>
-
-  )
-}
+  );
+};

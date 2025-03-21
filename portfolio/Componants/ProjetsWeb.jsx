@@ -22,7 +22,11 @@ export const ProjetsWeb = () => {
         gsap.to(".iphone", {duration: 2,
             scrollTrigger: {
             trigger:".iphone",
-            start: "top center"
+            start: "top 70%",
+            end: "bottom 30%",
+
+            // markers:true,
+            toggleActions: "restart reverse play reverse",
             },
             x:0,
             ease: "elastic.out(1,0.3)",

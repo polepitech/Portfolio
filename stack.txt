@@ -1,0 +1,7 @@
+-Lenis 'Scroll Smooth'
+-GSAP 'Animation'
+-Splitting // split les texte par lettre ou mot pour anim
+-Matter Js // '2D physic'OK
+-tailwind OK
+-Barba.js //transition entre page
+-React.Bit
