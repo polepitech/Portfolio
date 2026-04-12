@@ -1,0 +1,24 @@
+{
+    "questions":[
+        {
+            "question": "Quel est le prénom de votre future alternant?",
+            "options": ["Paul DAVID", "Phillipe Poutou", "Michael Jackson", "Gims?"],
+            "reponse": 0
+        },
+        {
+            "question": "What is the capital of Germany?",
+            "options": ["A", "B", "C", "D"],
+            "reponse": 0
+        },
+        {
+            "question": "What is the capital of Italy?",
+            "options": ["A", "B", "C", "D"],
+            "reponse": 2
+        },
+        {
+            "question": "What is the capital of Spain?",
+            "options": ["A", "B", "C", "D"],
+            "reponse": 3
+        }
+    ]
+}

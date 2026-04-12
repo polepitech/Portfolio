@@ -1,0 +1,12 @@
+/* Webfont: MangoGrotesque-ExtBdIta */@font-face {
+    font-family: 'MangoGrotesqueExtBdIta';
+    src: url('MangoGrotesque-ExtBdIta.eot'); /* IE9 Compat Modes */
+    src: url('MangoGrotesque-ExtBdIta.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('MangoGrotesque-ExtBdIta.woff') format('woff'), /* Modern Browsers */
+         url('MangoGrotesque-ExtBdIta.woff2') format('woff2'), /* Modern Browsers */
+         url('MangoGrotesque-ExtBdIta.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
