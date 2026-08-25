@@ -13,6 +13,7 @@ export const ProjetsWeb = () => {
     const projetRef = useRef(null);
 
     const videoLink = [
+        "",
         '/Assets/Videos/MeeticMobile.mp4',
         '/Assets/Videos/TwitterMobile.mp4',
         '/Assets/Videos/JulietteMobile.mp4',
@@ -20,6 +21,7 @@ export const ProjetsWeb = () => {
         '/Assets/Videos/MyCinemaMobile.mp4'
     ]
     const colorsbg = [
+        'blue',
         'red',
         'green',
         'blue',
@@ -27,6 +29,7 @@ export const ProjetsWeb = () => {
         'brown'
     ]
     const Titres = [
+        'Kraken',
         'Meetic',
         'Twitter',
         'Studio Saladin',
@@ -115,13 +118,6 @@ export const ProjetsWeb = () => {
         }
 
         window.addEventListener('resize',handleResize);
-        // window.addEventListener('scroll',(e)=>{
-        //     if(window.innerWidth > 650 && window.scrollY > projetTop-(window.innerWidth/2) && window.scrollY < projetBot-(window.innerWidth/2)){
-        //         gsap.to(window, { duration: 2, scrollTo: {y:"#projetWeb",autoKill:true}});
-        //     }
-        // })
-        
-
         
         handleResize();
     
@@ -160,7 +156,7 @@ export const ProjetsWeb = () => {
 
     useEffect(() => {
         const video = videoRef.current;
-        if (!video) return;
+        if (!video || !videoLink[compteur]) return;
 
         video.src = videoLink[compteur];
         video.load();
@@ -175,11 +171,6 @@ export const ProjetsWeb = () => {
                 var newCompteur = prev - 1;
             }
             setCarousselPosition(`-${newCompteur * 100}vw`);
-            if(newCompteur == 4){
-                gsap.to(".iphone", {duration: 1,opacity:0})
-            }else{
-                gsap.to(".iphone", {duration: 1,opacity:1})
-            }
             return newCompteur;
         });
     }
@@ -192,11 +183,6 @@ export const ProjetsWeb = () => {
                 var newCompteur = prev + 1;
             }
             setCarousselPosition(`-${newCompteur * 100}vw`);
-            if(newCompteur == 4){
-                gsap.to(".iphone", {duration: 1,opacity:0})
-            }else{
-                gsap.to(".iphone", {duration: 1,opacity:1})
-            }
             return newCompteur;
         });
     }
@@ -209,7 +195,7 @@ export const ProjetsWeb = () => {
  
         <Carousel pos={CarousselPosition}/>
 
-        <div className="iphone w-[221px] h-[400px] absolute right-20 bottom-[25%] sm:bottom-12 pointer-events-none">
+        <div className={`iphone w-[221px] h-[400px] absolute right-20 bottom-[25%] sm:bottom-12 pointer-events-none transition-opacity duration-1000 ${videoLink[compteur] ? 'opacity-100' : 'opacity-0'}`}>
             <img className="absolute w-full h-full z-10" src="Assets/Images/Iphone.png" alt=""/>
             <div className="Mask w-full h-full bg-black">
                 <video ref={videoRef} className="absolute w-full h-full rotationIphone" autoPlay loop muted playsInline />

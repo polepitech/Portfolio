@@ -35,6 +35,11 @@ export const Carousel = ({pos}) => {
   return (
     <div onClick={open} className="Carousel h-[200vh] flex relative left-0" style={{left:pos}}>
         <Projet 
+            title='Kraken'     
+            link='/Assets/Videos/Kraken.mp4'    
+            desc="Plateforme d'automatisation pour beatmaker, Oauth, AWS, Sytem de Queue, Test unitaires etc <br><a href='https://kraken-lab.fr' class='text-blue-500 cursor-pointer' target='_blank'>https://kraken-lab.fr</a>"/>
+        
+        <Projet 
             title='Meetic'     
             link='/Assets/Videos/Meetic.mp4'    
             desc="Dans le cadre d'un projet étudiant, j'ai développé une <span>application web</span> de rencontre.<br>Ce projet m'a permis d'apprendre à intégrer des <span>API</span> externes (Spotify, MovieCover) ainsi qu'à gérer une base de données."/>
