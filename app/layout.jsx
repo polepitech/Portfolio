@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono,Rubik } from "next/font/google";
 import { SmoothScroll } from "@/Componants/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react"
-import { Rubik } from 'next/font/google'
 import "./globals.css";
 
 const rubik = Rubik({

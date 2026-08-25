@@ -135,8 +135,6 @@ export default function Aurora(props) {
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
-    // gl.canvas.style.filter = 'contrast(2000%) brightness(70%)';
-    // gl.canvas.style.background = "red, url('/Assets/Images/Grain.svg')";
     ;
 
     let program;

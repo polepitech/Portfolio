@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
   --background: #ffffff;
@@ -14,19 +13,18 @@ body{
 }
 
 .grain{
-  background-image: url("/Assets/Images/Grain.jpg");
+  background-image: url("/Assets/Images/Grain.webp");
   background-repeat: repeat;
   background-size: 1000px;
   /* background-blend-mode: color; */
   pointer-events: none;
 }
 h1,h2,h3,.loadingnumber{
-  font-family: 'Oswald';
-  font-family: 'Rubik';
+  font-family: var(--font-rubik), sans-serif;
 
 }
 .follower,.follower2{
-  font-family: 'Rubik';
+  font-family: var(--font-rubik), sans-serif;
   font-weight: 900;
 }
 

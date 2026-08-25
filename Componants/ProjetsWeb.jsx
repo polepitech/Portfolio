@@ -159,11 +159,12 @@ export const ProjetsWeb = () => {
 
 
     useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.src = videoLink[compteur];
-            videoRef.current.load(); // Recharge la vidéo pour prendre en compte le nouveau src
-            videoRef.current.play(); // Joue la vidéo automatiquement après le changement
-        }
+        const video = videoRef.current;
+        if (!video) return;
+
+        video.src = videoLink[compteur];
+        video.load();
+        video.play().catch(() => {});
     }, [compteur]);
 
     function gauche() {
